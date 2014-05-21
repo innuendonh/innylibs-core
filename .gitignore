@@ -1,4 +1,13 @@
+# eclipse settings
+.classpath
+.project
+.settings/
+
 *.class
+
+# maven generated sources
+src/main/generated-sources/
+src/test/generated-sources/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
