@@ -18,6 +18,7 @@ package innylibs.guava
 import com.google.common.io.ByteSink
 import java.io.IOException
 import java.util.zip.GZIPOutputStream
+import static com.google.common.base.Preconditions.*
 
 /**
  * ByteSink decorator compressing output. 
@@ -28,7 +29,7 @@ final class GzipSink extends ByteSink {
 	 * Static factory for gzipping the passed ByteSink
 	 */
 	static def gzip(ByteSink uz) {
-		new GzipSink(uz)
+		new GzipSink(checkNotNull(uz))
 	}
 
 	val ByteSink unzipped

@@ -19,6 +19,8 @@ import com.google.common.io.ByteSource
 import java.io.IOException
 import java.util.zip.GZIPInputStream
 
+import static com.google.common.base.Preconditions.*
+
 /**
  * ByteSource decorator for unzipping streams.
  */
@@ -28,7 +30,7 @@ final class GzipSource extends ByteSource {
 	 * Factory decompressing the passed source
 	 */
 	static def gunzip(ByteSource z) {
-		new GzipSource(z)
+		new GzipSource(checkNotNull(z))
 	}
 
 	val ByteSource zipped;
